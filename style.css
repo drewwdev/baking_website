@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+  color: #8b575c;
+}
+
+.hero-buttons {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #8b575c;
+}
+
+.btn {
+  text-decoration: none;
+  color: #8b575c;
+  font-size: 1.2rem;
+  padding: 0 20px 0 20px;
+}
+
+.btn:hover {
+  text-decoration: underline;
+  color: #8b575c;
+}
+
+.hero {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  padding-bottom: 20px;
+}
+
+.hero img {
+  max-width: 800px;
+  height: 80vh;
+  display: block;
+}
+
+.featured {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.posts {
+  display: flex;
+  gap: 20px;
+}
+
+.no-instagram-posts {
+  font-style: italic;
+  color: #c98986;
+  text-align: center;
+}
+
+.orders {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orders p a {
+  text-decoration: none;
+  color: #c98986;
+  font-weight: bold;
+}
+
+.orders p a:hover {
+  text-decoration: underline;
+  color: #c98986;
+}
+
+.events {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-item {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.event-item a {
+  text-decoration: none;
+  color: #c98986;
+  font-weight: bold;
+}
+
+.event-item a:hover {
+  text-decoration: underline;
+  color: #c98986;
+}
+
+.no-events-message {
+  font-style: italic;
+  color: #c98986;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  .posts {
+    flex-direction: column;
+  }
+
+  .hero img {
+    max-width: 80%;
+    height: auto;
+  }
+}
