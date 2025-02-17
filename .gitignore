@@ -1,23 +1,21 @@
-# Ignore Node.js dependencies (if you use npm)
+# Node.js dependencies (if using npm)
 node_modules/
 
-# Ignore TypeScript build artifacts
+# TypeScript build artifacts
 dist/*.d.ts
 dist/*.js.map
 
-# Ignore the TypeScript build cache
+# TypeScript cache
 .tsbuildinfo
 
-# Ignore compiled/minified CSS (if auto-generated)
-style.min.css
-
-# Ignore editor-specific files
+# Editor & OS-generated files
 .vscode/
 .idea/
-
-# Ignore OS-generated files
 .DS_Store
 Thumbs.db
 
-# Ignore GitHub Pages Jekyll settings (optional but recommended)
-.github/
+# Sanity auto-generated files
+studio/node_modules/
+studio/.sanity/
+studio/.cache/
+studio/dist/
