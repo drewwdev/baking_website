@@ -1,34 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var events = [
-    // {
-    //   title: "Spring Farmers Market",
-    //   date: "March 10, 2025",
-    //   location: "Downtown Square",
-    //   link: "https://example.com/event1",
-    // },
-    ];
-    var eventsContainer = document.getElementById("events");
+"use strict";
+document.addEventListener("DOMContentLoaded", () => {
+    const events = [];
+    const eventsContainer = document.getElementById("events");
     if (!eventsContainer) {
         console.error("Events container not found");
         return;
     }
-    var defaultEventMessage = eventsContainer.querySelector("p");
+    const defaultEventMessage = eventsContainer.querySelector("p");
     if (events.length === 0) {
         if (defaultEventMessage) {
             defaultEventMessage.textContent = "Check back here for my next event!";
         }
         else {
-            var noEventsMessage = document.createElement("p");
+            const noEventsMessage = document.createElement("p");
             noEventsMessage.textContent = "Check back here for my next event!";
             noEventsMessage.className = "no-events-message";
             eventsContainer.appendChild(noEventsMessage);
         }
         return;
     }
-    events.forEach(function (event) {
-        var eventItem = document.createElement("div");
+    events.forEach((event) => {
+        const eventItem = document.createElement("div");
         eventItem.className = "event-item";
-        eventItem.innerHTML = "\n        <h3>".concat(event.title, "</h3>\n        <p><strong>Date:</strong> ").concat(event.date, "</p>\n        <p><strong>Location:</strong> ").concat(event.location, "</p>\n        <a href=\"").concat(event.link, "\" target=\"_blank\">More Info</a>\n      ");
+        eventItem.innerHTML = `
+        <h3>${event.title}</h3>
+        <p><strong>Date:</strong> ${event.date}</p>
+        <p><strong>Location:</strong> ${event.location}</p>
+        <a href="${event.link}" target="_blank">More Info</a>
+      `;
         eventsContainer.appendChild(eventItem);
     });
 });

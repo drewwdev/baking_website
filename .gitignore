@@ -1,0 +1,23 @@
+# Ignore Node.js dependencies (if you use npm)
+node_modules/
+
+# Ignore TypeScript build artifacts
+dist/*.d.ts
+dist/*.js.map
+
+# Ignore the TypeScript build cache
+.tsbuildinfo
+
+# Ignore compiled/minified CSS (if auto-generated)
+style.min.css
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore GitHub Pages Jekyll settings (optional but recommended)
+.github/
