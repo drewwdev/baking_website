@@ -1,50 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-  type EventItem = {
-    title: string;
-    date: string;
-    location: string;
-    link: string;
-  };
+// @ts-ignore
+import { createClient } from "https://esm.sh/@sanity/client";
 
-  const events: EventItem[] = [
-    // {
-    //   title: "Spring Farmers Market",
-    //   date: "March 10, 2025",
-    //   location: "Downtown Square",
-    //   link: "https://example.com/event1",
-    // },
-  ];
+const client = createClient({
+  projectId: "rjglyxa8",
+  dataset: "production",
+  apiVersion: "2023-01-01",
+  useCdn: false,
+});
 
-  const eventsContainer = document.getElementById("events");
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("events");
+  if (!container) return;
 
-  if (!eventsContainer) {
-    console.error("Events container not found");
-    return;
-  }
+  try {
+    const events: {
+      title: string;
+      date: string;
+      location: string;
+      link?: string;
+    }[] = await client.fetch(
+      '*[_type == "event"] | order(date asc) [0..4]{title, date, location, link}'
+    );
 
-  const defaultEventMessage = eventsContainer.querySelector("p");
+    container.innerHTML = "";
 
-  if (events.length === 0) {
-    if (defaultEventMessage) {
-      defaultEventMessage.textContent = "Check back here for my next event!";
-    } else {
-      const noEventsMessage = document.createElement("p");
-      noEventsMessage.textContent = "Check back here for my next event!";
-      noEventsMessage.className = "no-events-message";
-      eventsContainer.appendChild(noEventsMessage);
+    if (events.length === 0) {
+      container.innerHTML = "<p>Check back here for my next event!</p>";
+      return;
     }
-    return;
-  }
 
-  events.forEach((event) => {
-    const eventItem = document.createElement("div");
-    eventItem.className = "event-item";
-    eventItem.innerHTML = `
+    events.forEach((event) => {
+      const item = document.createElement("div");
+      item.className = "event-item";
+      item.innerHTML = `
         <h3>${event.title}</h3>
-        <p><strong>Date:</strong> ${event.date}</p>
+        <p><strong>Date:</strong> ${new Date(
+          event.date
+        ).toLocaleDateString()}</p>
         <p><strong>Location:</strong> ${event.location}</p>
-        <a href="${event.link}" target="_blank">More Info</a>
+        ${
+          event.link
+            ? `<a href="${event.link}" target="_blank">More Info</a>`
+            : ""
+        }
       `;
-    eventsContainer.appendChild(eventItem);
-  });
+      container.appendChild(item);
+    });
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    container.innerHTML =
+      "<p>Failed to load events. Please try again later.</p>";
+  }
 });
