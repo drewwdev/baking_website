@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching featured creations:", error);
     container.innerHTML =
-      "<p>Failed to load featured creations. Please try again later.</p>";
+      "<p>View my creations on my Instagram! <a href='https://www.instagram.com/moodyvirgobaker/' target='_blank' rel='noopener noreferrer'>@moodyvirgobaker</a></p>";
   }
 });
