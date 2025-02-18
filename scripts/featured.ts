@@ -1,7 +1,6 @@
 // @ts-ignore
-import { createClient } from "@sanity/client";
-
-const client = createClient({
+import sanityClient from "@sanity/client";
+const client = sanityClient({
   projectId: "rjglyxa8",
   dataset: "production",
   apiVersion: "2023-01-01",
