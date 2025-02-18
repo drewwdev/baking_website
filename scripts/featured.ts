@@ -1,6 +1,7 @@
 // @ts-ignore
-import sanityClient from "@sanity/client";
-const client = sanityClient({
+import { createClient } from "https://esm.sh/@sanity/client";
+
+const client = createClient({
   projectId: "rjglyxa8",
   dataset: "production",
   apiVersion: "2023-01-01",
