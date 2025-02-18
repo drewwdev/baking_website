@@ -1,6 +1,13 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
-    const events = [];
+    const events = [
+    // {
+    //   title: "Spring Farmers Market",
+    //   date: "March 10, 2025",
+    //   location: "Downtown Square",
+    //   link: "https://example.com/event1",
+    // },
+    ];
     const eventsContainer = document.getElementById("events");
     if (!eventsContainer) {
         console.error("Events container not found");

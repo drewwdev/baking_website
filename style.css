@@ -56,15 +56,39 @@ body {
   align-items: center;
 }
 
-.posts {
+/* Featured Creations Styling */
+#featured-creations {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
-.no-instagram-posts {
-  font-style: italic;
-  color: #c98986;
+.creation-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
   text-align: center;
+}
+
+.creation-item img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.creation-item h3 {
+  margin: 10px 0;
+  color: #8b575c;
+}
+
+.creation-item p {
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .events {
