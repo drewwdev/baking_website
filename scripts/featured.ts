@@ -1,5 +1,5 @@
 // @ts-ignore
-import { createClient } from "https://esm.sh/@sanity/client";
+import { createClient } from "@sanity/client";
 
 const client = createClient({
   projectId: "rjglyxa8",

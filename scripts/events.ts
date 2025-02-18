@@ -1,11 +1,11 @@
 // @ts-ignore
-import { createClient } from "https://esm.sh/@sanity/client";
+import { createClient } from "@sanity/client";
 
 const client = createClient({
   projectId: "rjglyxa8",
   dataset: "production",
   apiVersion: "2023-01-01",
-  useCdn: false,
+  useCdn: true,
 });
 
 document.addEventListener("DOMContentLoaded", async () => {

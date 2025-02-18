@@ -8,12 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // @ts-ignore
-import { createClient } from "https://esm.sh/@sanity/client";
+import { createClient } from "@sanity/client";
 const client = createClient({
     projectId: "rjglyxa8",
     dataset: "production",
     apiVersion: "2023-01-01",
-    useCdn: false,
+    useCdn: true,
 });
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
     const container = document.getElementById("events");

@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // @ts-ignore
-import { createClient } from "https://esm.sh/@sanity/client";
+import { createClient } from "@sanity/client";
 const client = createClient({
     projectId: "rjglyxa8",
     dataset: "production",
